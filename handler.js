@@ -9,7 +9,7 @@ var y = d3.scale.linear()
     .rangeRound([height, 0]);
 
 var color = d3.scale.ordinal()
-    .range(["#98ABC5", "#8A89A6", "#7B6888", "#6B486B", "#A05D56", "#D0743C", "#FF8C00", "#DE67E2", "#EE5733", "#9CFF33", "#9C66D3  ", "#679BE2"]);
+    .range(["#D8F781", "#81F79F", "#00FFBF", "#81DAF5", "#2E9AFE", "#2E64FE", "#8258FA", "#AC58FA", "#A901DB", "#9C66D3", "#FA58F4", "#F781D8"]); //cred to gulli for picking colors
 
 var xAxis = d3.svg.axis()
     .scale(x)
