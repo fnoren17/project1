@@ -1,4 +1,4 @@
-var margin = {top: 20, right: 200, bottom: 100, left: 40},
+var margin = {top: 20, right: 200, bottom: 130, left: 40},
     width = 1450- margin.left - margin.right,
     height = 600 - margin.top - margin.bottom;
 
@@ -95,9 +95,6 @@ d3.csv("data.csv", function(error, data) {
        .on("mouseover", function(d){
 
           var delta = d.y1 - d.y0;
-          var xPos = parseFloat(d3.select(this).attr("x"));
-          var yPos = parseFloat(d3.select(this).attr("y"));
-          var height = parseFloat(d3.select(this).attr("height"))
 
           d3.select(this).attr("stroke","blue").attr("stroke-width",0.8);
 
@@ -106,7 +103,8 @@ d3.csv("data.csv", function(error, data) {
               .attr("y",5)
               .attr("class","tooltip")
               .attr("style", "text-anchor:middle")
-              .text(d.aliasData + ": " + d.name +": "+ delta); 
+      
+              .text(d.aliasData + "'s " + d.name +" skills: "+ delta); 
           
        })
        .on("mouseout",function(){
@@ -222,7 +220,7 @@ d3.csv("data.csv", function(error, data) {
     class_keep = d.id.split("id").pop();
     idx = legendClassArray.indexOf(class_keep);    
    
-    //erase all but selected bars by setting opacity to 0
+
     for (i = 0; i < legendClassArray.length; i++) {
       if (legendClassArray[i] != class_keep) {
         d3.selectAll(".class" + legendClassArray[i])
