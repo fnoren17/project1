@@ -35,7 +35,7 @@ var y_orig; //to store original y-posn
 d3.csv("data.csv", function(error, data) {
   if (error) throw error;
 
-  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "alias" && key !== "initials"; }));
+  color.domain(d3.keys(data[0]).filter(function(key) { return key !== "alias"; }));
 
   data.forEach(function(d) {
     var aliasData = d.alias; //add to stock code
