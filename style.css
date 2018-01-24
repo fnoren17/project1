@@ -27,8 +27,7 @@ h1{
 .tooltip{
     text-anchor: right;
     font-family: sans-serif;
-    font-size: 10px;
-    font-weight: bold;
+    font-size: 20px;
     fill: black;
 }
 

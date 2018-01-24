@@ -102,10 +102,11 @@ d3.csv("data.csv", function(error, data) {
           d3.select(this).attr("stroke","blue").attr("stroke-width",0.8);
 
           svg.append("text")
-          .attr("x",xPos)
-          .attr("y",yPos +height/4)
-          .attr("class","tooltip")
-          .text(d.name +": "+ delta); 
+              .attr("x",width/2)
+              .attr("y",5)
+              .attr("class","tooltip")
+              .attr("style", "text-anchor:middle")
+              .text(d.aliasData + ": " + d.name +": "+ delta); 
           
        })
        .on("mouseout",function(){
