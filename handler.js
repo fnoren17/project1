@@ -1,6 +1,6 @@
 var margin = {top: 20, right: 200, bottom: 100, left: 40},
-    width = 1500- margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 1450- margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
 
 var x = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
@@ -9,7 +9,7 @@ var y = d3.scale.linear()
     .rangeRound([height, 0]);
 
 var color = d3.scale.ordinal()
-    .range(["#D8F781", "#81F79F", "#00FFBF", "#81DAF5", "#2E9AFE", "#2E64FE", "#8258FA", "#AC58FA", "#A901DB", "#9C66D3", "#FA58F4", "#F781D8"]); //cred to gulli for picking colors
+    .range(["#EFF770", "#81F79F", "#00FFBF", "#81DAF5", "#2E9AFE", "#2E64FE", "#8258FA", "#AC58FA", "#A901DB", "#9C66D3", "#FA58F4", "#F781D8"]);
 
 var xAxis = d3.svg.axis()
     .scale(x)
@@ -123,7 +123,7 @@ d3.csv("data.csv", function(error, data) {
         legendClassArray.push(d.replace(/\s/g, '')); //remove spaces
         return "legend";
       })
-      .attr("transform", function(d, i) { return "translate(150," + i * 20 + ")"; })
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; })
 
   //reverse order to match order in which bars are stacked    
   legendClassArray = legendClassArray.reverse();

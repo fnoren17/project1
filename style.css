@@ -4,6 +4,11 @@ body {
     word-wrap: break-word;
 }
 
+h1{
+    text-align: center;
+    font-size: 30px;
+}
+
 .axis path,
 .axis line {
     fill: none;
@@ -25,4 +30,9 @@ body {
     font-size: 10px;
     font-weight: bold;
     fill: black;
+}
+
+p {
+    text-align: center;
+    font-size: 15px;
 }
