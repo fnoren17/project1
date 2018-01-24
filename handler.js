@@ -40,7 +40,6 @@ d3.csv("data.csv", function(error, data) {
   data.forEach(function(d) {
     var aliasData = d.alias; //add to stock code
     var y0 = 0;
-    //d.skills = color.domain().map(function(name) { return {name: name, y0: y0, y1: y0 += +d[name]}; });
     d.skills = color.domain().map(function(name) { return {aliasData:aliasData, name: name, y0: y0, y1: y0 += +d[name]}; });
     d.total = d.skills[d.skills.length - 1].y1;
 
@@ -64,7 +63,6 @@ d3.csv("data.csv", function(error, data) {
       .attr("class", "y axis")
       .call(yAxis)
     .append("text")
-      //.attr("transform", "rotate(-90)")
       .attr("y", -15)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
@@ -75,7 +73,6 @@ d3.csv("data.csv", function(error, data) {
     .enter().append("g")
     .attr("class", "g")
     .attr("transform", function(d) { return "translate(" + "0" + ",0)"; });
-      //.attr("transform", function(d) { return "translate(" + x(d.alias) + ",0)"; })
 
   alias.selectAll("rect")
       .data(function(d) {
@@ -106,7 +103,7 @@ d3.csv("data.csv", function(error, data) {
 
           svg.append("text")
           .attr("x",xPos)
-          .attr("y",yPos +height/2)
+          .attr("y",yPos +height/4)
           .attr("class","tooltip")
           .text(d.name +": "+ delta); 
           
